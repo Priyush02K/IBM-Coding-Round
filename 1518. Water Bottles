@@ -1,0 +1,38 @@
+here are numBottles water bottles that are initially full of water. You can exchange numExchange empty water bottles from the market with one full water bottle.
+
+The operation of drinking a full water bottle turns it into an empty bottle.
+
+Given the two integers numBottles and numExchange, return the maximum number of water bottles you can drink.
+
+ 
+
+Example 
+Input: numBottles = 9, numExchange = 3
+Output: 13
+Explanation: You can exchange 3 empty bottles to get 1 full water bottle.
+Number of water bottles you can drink: 9 + 3 + 1 = 13.
+
+```
+class Solution {
+    public int numWaterBottles(int numBottles, int numExchange) {
+        // Initialize totalDrunkBottles with the number of bottles we start with
+        int totalDrunkBottles = numBottles;
+      
+        // Continue the process as long as we have enough empty bottles to exchange
+        while (numBottles >= numExchange) {
+            // Calculate the number of new bottles we can get by exchanging
+            int newBottles = numBottles / numExchange;
+          
+            // Update the count of total drunk bottles with the new bottles
+            totalDrunkBottles += newBottles;
+          
+            // Update the current number of bottles we have,
+            // Including the new bottles and the bottles left after the exchange
+            numBottles = newBottles + (numBottles % numExchange);
+        }
+      
+        // Return the total number of drunk bottles
+        return totalDrunkBottles;
+    }
+}
+```
