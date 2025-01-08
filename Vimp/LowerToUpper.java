@@ -1,7 +1,7 @@
 import java.util.*;
 import java.lang.*;
 import java.io.*;
-
+//WAP to convert uppercase to lower case and vice versa of a given string or sentence
 
 class LowerToUpper
 {
