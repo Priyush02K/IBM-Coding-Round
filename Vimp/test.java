@@ -1,3 +1,4 @@
+//WAP to print next to last word of a sentence	
 import java.io.*;
 class test
 {
